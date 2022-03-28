@@ -1,0 +1,9 @@
+#!/usr/bin/env zsh
+
+gcloud config set project maahsome-shared
+gcloud services enable cloudkms.googleapis.com
+# these are commented out to show that this MUST be enabled in order to use
+# the workloadIdentityUser mechanism to access cross-project Keyring/Keys for
+# encrypting and decrypting
+# gcloud config set project maahsome-staging
+# gcloud services enable cloudkms.googleapis.com

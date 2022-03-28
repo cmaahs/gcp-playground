@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+
+sops --encrypt --gcp-kms "projects/maahsome-shared/locations/global/keyRings/helm-sops/cryptoKeys/helm-sops" test_secrets.yaml  > test_secrets_enc.yaml
+sops --decrypt test_secrets_enc.yaml | yq e . - > test_secrets_decr.yaml 
+diff -c test_secrets.yaml test_secrets_decr.yaml
+rm test_secrets_enc.yaml
+rm test_secrets_decr.yaml
