@@ -15,6 +15,6 @@ steps:
   - push
   - test-chart-0.1.0.tgz
   - oci://us-docker.pkg.dev/${PROJECT_ID}/helm/test-chart
-tags: ['helm push to gar']
+tags: ['helm-push-to-gar']
 substitutions:
   _REGION: us-east4
