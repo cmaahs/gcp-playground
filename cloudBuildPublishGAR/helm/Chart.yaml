@@ -2,6 +2,6 @@ apiVersion: v2
 name: test-chart
 description: Test Chart for Publishing
 type: application
-version: 0.1.0
+version: 0.1.1
 appVersion: "1.0.0"
 

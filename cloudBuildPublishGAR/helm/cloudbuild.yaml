@@ -1,9 +1,9 @@
 steps:
-- name: 'gcr.io/build-publish-test-56feaef5/helm:3.9.2'
-  id : 'Login Helm Registry'
-  entrypoint: 'bash'
-  args:
-  - ./cloudBuildPublishGAR/helm/authenticate.bash
+# - name: 'gcr.io/build-publish-test-56feaef5/helm:3.9.2'
+#   id : 'Login Helm Registry'
+#   entrypoint: 'bash'
+#   args:
+#   - ./cloudBuildPublishGAR/helm/authenticate.bash
 - name: 'gcr.io/build-publish-test-56feaef5/helm:3.9.2'
   id : 'Package Helm'
   args:
@@ -15,7 +15,7 @@ steps:
   id : 'Push to GAR'
   args:
   - push
-  - test-chart-0.1.0.tgz
+  - test-chart-0.1.1.tgz
   - oci://us-docker.pkg.dev/${PROJECT_ID}/helm/test-chart
   env:
   - 'SKIP_CLUSTER_CONFIG=true'
