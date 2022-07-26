@@ -7,14 +7,14 @@ steps:
 - name: 'gcr.io/build-publish-test-56feaef5/helm:3.9.2'
   id : 'Package Helm'
   args:
-  - package
+  - template
   - ./cloudBuildPublishGAR/helm
-- name: 'gcr.io/build-publish-test-56feaef5/helm:3.9.2'
-  id : 'Push to GAR'
-  args:
-  - push
-  - test-chart-0.1.0.tgz
-  - oci://us-docker.pkg.dev/${PROJECT_ID}/helm/test-chart
+# - name: 'gcr.io/build-publish-test-56feaef5/helm:3.9.2'
+#   id : 'Push to GAR'
+#   args:
+#   - push
+#   - test-chart-0.1.0.tgz
+#   - oci://us-docker.pkg.dev/${PROJECT_ID}/helm/test-chart
 tags: ['helm-push-to-gar']
 substitutions:
   _REGION: us-east4
