@@ -8,7 +8,7 @@ steps:
   id : 'Package Helm'
   args:
   - package
-  - .
+  - ./cloudBuildPublishGAR/helm
 - name: 'gcr.io/build-publish-test-56feaef5/helm:3.9.2'
   id : 'Push to GAR'
   args:
