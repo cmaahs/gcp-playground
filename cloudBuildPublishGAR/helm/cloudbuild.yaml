@@ -3,7 +3,7 @@ steps:
   id : 'Login Helm Registry'
   entrypoint: 'bash'
   args:
-  - ./authenticate.bash
+  - ./helm/authenticate.bash
 - name: 'gcr.io/build-publish-test-56feaef5/helm:3.9.2'
   id : 'Package Helm'
   args:
