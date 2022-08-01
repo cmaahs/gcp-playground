@@ -1,4 +1,4 @@
-FROM argoproj/argocd:v2.3.1
+FROM argoproj/argocd:v2.3.7
 
 ARG SOPS_VERSION="v3.7.1"
 ARG HELM_SECRETS_VERSION="3.12.0"
@@ -37,3 +37,4 @@ RUN echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.
 USER 999
 ENV HELM_PLUGINS="/home/helm/plugins/"
 RUN /usr/local/bin/helm.bin plugin install https://github.com/jkroepke/helm-secrets --version ${HELM_SECRETS_VERSION}
+
