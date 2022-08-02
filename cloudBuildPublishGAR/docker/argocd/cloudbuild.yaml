@@ -9,7 +9,7 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   id: "Docker Push ArgoCD"
   entrypoint: bash
-  args: ['-c', 'docker push -t ${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE}:$(cat /workspace/IMAGE_TAG.txt)']
+  args: ['-c', 'docker push ${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE}:$(cat /workspace/IMAGE_TAG.txt)']
 substitutions:
   _LOCATION: us
   _REPOSITORY: docker
