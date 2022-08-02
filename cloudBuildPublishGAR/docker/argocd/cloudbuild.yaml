@@ -6,7 +6,7 @@ steps:
   id: "Docker Build ArgoCD"
   # args: [ 'build', '-t', "${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE}:$(cat /workspace/IMAGE_TAG.txt)", 'cloudBuildPublishGAR/docker/argocd/.' ]
   entrypoint: bash
-  args: ['-c', 'docker build -t ${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE}:$(cat /workspace/IMAGE_TAG.txt)', 'cloudBuildPublishGAR/docker/argocd/.']
+  args: ['-c', 'docker build -t ${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE}:$(cat /workspace/IMAGE_TAG.txt) cloudBuildPublishGAR/docker/argocd/.']
 substitutions:
   _LOCATION: us
   _REPOSITORY: docker
