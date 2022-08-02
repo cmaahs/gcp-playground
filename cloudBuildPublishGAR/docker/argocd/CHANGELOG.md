@@ -10,6 +10,12 @@ CHANGELOG entries we increment a `-#` to the matching SEMVER from the `Dockerfil
 the highest (first encountered) matching entry is used to TAG the built docker image and
 is pushed into ghcr.io.
 
+## [2.3.7-1] - 2022-08-02
+
+### Additions
+
+- Initial Build for ArgoCD v2.3.7
+
 ## [2.3.1-1] - 2022-08-01
 
 ### Additions
