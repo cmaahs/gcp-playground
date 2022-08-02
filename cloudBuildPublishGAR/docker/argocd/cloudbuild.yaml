@@ -1,10 +1,11 @@
 steps:
+- name: 'bash'
+  args: ['./cloudBuildPublishGAR/docker/argocd/version_check.bash']
 - name: 'gcr.io/cloud-builders/docker'
-  args: [ 'build', '-t', '${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE}:${_TAG}', 'cloudBuildPublishGAR/docker/argocd/.' ]
+  args: [ 'build', '-t', '${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE}:$(cat /workspace/ARGO_IMAGE_TAG.txt)', 'cloudBuildPublishGAR/docker/argocd/.' ]
 images:
-- '${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE}:${_TAG}'
+- '${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE}:$(cat /workspace/ARGO_IMAGE_TAG.txt)'
 substitutions:
   _LOCATION: us
   _REPOSITORY: docker
   _IMAGE: argocd-cmaahs
-  _TAG: 2.3.1-1
