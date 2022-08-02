@@ -4,7 +4,7 @@ steps:
   args: ['./cloudBuildPublishGAR/docker/argocd/version_check.bash']
 - name: 'gcr.io/cloud-builders/docker'
   id: "Docker Build ArgoCD"
-  args: [ 'build', '-t', '${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE}:$(cat /workspace/IMAGE_TAG.txt)', 'cloudBuildPublishGAR/docker/argocd/.' ]
+  args: [ 'build', '-t', "${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE}:$(cat /workspace/IMAGE_TAG.txt)", 'cloudBuildPublishGAR/docker/argocd/.' ]
 substitutions:
   _LOCATION: us
   _REPOSITORY: docker
